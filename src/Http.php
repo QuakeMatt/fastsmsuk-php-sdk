@@ -56,7 +56,7 @@ class Http
      * @param boolean $array Return as array
      * @return string|array Params
      */
-    protected function buildArgs($action, $args = [], $array = false)
+    protected function buildArgs($action, $args = array(), $array = false)
     {
         $args['Action'] = $action;
         $args['Token'] = $this->client->getToken();
@@ -88,7 +88,7 @@ class Http
     /**
      * Execute API call
      */
-    public function call($action, $args = [])
+    public function call($action, $args = array())
     {
         $result = '';
         switch ($this->library) {
@@ -143,7 +143,7 @@ class Http
     protected function openssl($query)
     {
         // Init
-        $err = [];
+        $err = array();
         $result = '';
         // Build headers
         $headers = "POST " . self::PATH . " HTTP/1.0\r\n";
@@ -198,11 +198,11 @@ class Http
      */
     public static function getSupportLibraries()
     {
-        return [
+        return array(
             'curl' => 'сURL',
             'openssl' => 'OpenSSL',
             'fopen' => 'Base File System'
-        ];
+        );
     }
 
     /**
@@ -213,7 +213,7 @@ class Http
      */
     public static function getApiErrors($code = null)
     {
-        $errors = [
+        $errors = array(
             '-100' => 'Not Enough Credits',
             '-101' => 'Invalid CreditID',
             '-200' => 'Invalid Contact',
@@ -259,7 +259,7 @@ class Http
             '-701' => 'No UserID Specified',
             '-702' => 'Invalid Amount Specified',
             '-703' => 'Invalid Currency Requested'
-        ];
+        );
         if (isset($code)) {
             return isset($errors[$code]) ? $errors[$code] : false;
         }

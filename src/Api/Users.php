@@ -17,8 +17,9 @@ class Users extends AbstractApi
      */
     public function create(Array $data)
     {
-        $args = (new User($data))->buildArgs();
-        $result = [];
+        $user = new User($data);
+        $args = $user->buildArgs();
+        $result = array();
         $data = $this->client->http->call('CreateUser', $args);
         $result['status'] = 'error';
         if ($data == 1) {
@@ -34,8 +35,9 @@ class Users extends AbstractApi
      */
     public function update(Array $data)
     {
-        $args = (new User($data))->buildArgs();
-        $result = [];
+        $user = new User($data);
+        $args = $user->buildArgs();
+        $result = array();
         $data = $this->client->http->call('UpdateCredits', $args);
         $result['status'] = 'error';
         if ($data == 1) {

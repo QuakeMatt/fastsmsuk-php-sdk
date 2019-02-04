@@ -10,7 +10,7 @@ class BaseModel extends FastSMSObject
      * Errors container.
      * @var array
      */
-    public $errors = [];
+    public $errors = array();
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ class BaseModel extends FastSMSObject
      *
      * @param array $config name-value pairs that will be used to initialize the object properties
      */
-    public function __construct($config = [])
+    public function __construct($config = array())
     {
         if (!empty($config)) {
             self::configure($this, $config);

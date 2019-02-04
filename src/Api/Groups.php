@@ -22,8 +22,8 @@ class Groups extends AbstractApi
      */
     public function deleteAll()
     {
-        $result = [];
-        $data = $this->client->http->call('DeleteAllGroups', []);
+        $result = array();
+        $data = $this->client->http->call('DeleteAllGroups', array());
         $result['status'] = 'error';
         if ($data == 1) {
             $result['status'] = 'success';
@@ -38,8 +38,8 @@ class Groups extends AbstractApi
      */
     public function emptyGroup($name)
     {
-        $result = [];
-        $args = [];
+        $result = array();
+        $args = array();
         if (is_string($name)) {
             $args['Group'] = $name;
         }
@@ -58,8 +58,8 @@ class Groups extends AbstractApi
      */
     public function delete($name)
     {
-        $result = [];
-        $args = [];
+        $result = array();
+        $args = array();
         if (is_string($name)) {
             $args['Group'] = $name;
         }

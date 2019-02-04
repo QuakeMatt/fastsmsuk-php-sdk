@@ -14,13 +14,13 @@ $client = new Client($config['token']);
 #Send message direct phone number(s)#
 #####################################
 // Init Message data model
-$data = [
+$data = array(
     'destinationAddress' => $config['destinations'],
     'sourceAddress' => $config['source'],
     'body' => 'Test API Wraper',
     'scheduleDate' => time() + 7200,
     'validityPeriod' => 3600 * 6,
-];
+);
 
 // Send Message
 try {
@@ -48,14 +48,14 @@ try {
 #####################################
 ########Send message to list#########
 #####################################
-$data = [
+$data = array(
     'list' => $config['list'],
     'destinationAddress' => $config['destinations'],
     'sourceAddress' => $config['source'],
     'body' => 'Test API Wraper',
     'scheduleDate' => time() + 7200,
     'validityPeriod' => 3600 * 6,
-];
+);
 // Send Message
 try {
     $result2 = $client->message->send($data);
@@ -77,13 +77,13 @@ try {
 #####################################
 ########Send message to group########
 #####################################
-$data = [
+$data = array(
     'group' => $config['group'],
     'sourceAddress' => $config['source'],
     'body' => 'Test group',
     'scheduleDate' => time() + 7200,
     'validityPeriod' => 3600 * 6,
-];
+);
 // Send Message
 try {
     $result3 = $client->message->send($data);

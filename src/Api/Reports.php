@@ -18,9 +18,10 @@ class Reports extends AbstractApi
      */
     public function get(Array $data)
     {
-        $args = (new Report($data))->buildArgs();
-        $data = [];
-        $result = [];
+        $report = new Report($data);
+        $args = $report->buildArgs();
+        $data = array();
+        $result = array();
         $csv = $this->client->http->call('Report', $args);
         $arr = explode("\n", $csv);
         foreach ($arr as $line) {

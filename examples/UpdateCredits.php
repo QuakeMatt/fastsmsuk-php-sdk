@@ -14,10 +14,10 @@ $client = new Client($config['token']);
 ###########Create new user###########
 #####################################
 // Init Message data model
-$data = [
+$data = array(
     'childUsername' => $config['existChildUser'],
     'quantity' => -5,
-];
+);
 // Update credits
 try {
     $result = $client->user->update($data);

@@ -17,9 +17,10 @@ class Contacts extends AbstractApi
      */
     public function create(Array $data)
     {
-        $args = (new Contact($data))->buildArgs();
-        $result = [];
-        $pdata = [];
+        $contact = new Contact($data);
+        $args = $contact->buildArgs();
+        $result = array();
+        $pdata = array();
         $data = $this->client->http->call('ImportContactsCSV', $args);
         $lines = array_map('trim', explode("\n", $data));
         unset($lines[key(array_slice($lines, -1, 1, true))]);
@@ -38,8 +39,8 @@ class Contacts extends AbstractApi
      */
     public function deleteAll()
     {
-        $result = [];
-        $data = $this->client->http->call('DeleteAllContacts', []);
+        $result = array();
+        $data = $this->client->http->call('DeleteAllContacts', array());
         $result['status'] = 'error';
         if ($data == 1) {
             $result['status'] = 'success';

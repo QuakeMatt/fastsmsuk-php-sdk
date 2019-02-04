@@ -14,7 +14,7 @@ $client = new Client($config['token']);
 ###########Create new user###########
 #####################################
 // Init Message data model
-$data = [
+$data = array(
     'childUsername' => $config['childUsername'],
     'childPassword' => $config['childPassword'],
     'accessLevel' => $config['accessLevel'],
@@ -25,7 +25,7 @@ $data = [
     'telephone' => $config['telephone'],
     'creditReminder' => 10,
     'alert' => 5, //5 days
-];
+);
 // Create user
 try {
     $result = $client->user->create($data);

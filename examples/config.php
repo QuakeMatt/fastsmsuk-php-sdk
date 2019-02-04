@@ -1,11 +1,11 @@
 <?php
 
-return [
+return array(
     'token' => 'YourToken', // Insert your token
     ###On create message###
-    'destinations' => [ // Insert test phone numbers
+    'destinations' => array( // Insert test phone numbers
         '0000000000'
-    ],
+    ),
     'list' => 'TestList', // Insert test list
     'group' => 'TestGroup', // Insert test group
     'source' => 'YorCompany', // Insert soorce name or phone
@@ -21,4 +21,4 @@ return [
     'existChildUser' => '',
     ###Message status###
     'existMessage' => 00000000,
-];
+);

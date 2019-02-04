@@ -14,16 +14,15 @@ $client = new Client($config['token']);
 ###########Create contacts###########
 #####################################
 // Init Contacts data model
-$data = [
-    'contacts' => [
-        ['name' => 'John Doe 1', 'number' => 15417543011, 'email' => 'john.doe.1@example.com'],
-        ['name' => 'John Doe 2', 'number' => 15417543012, 'email' => 'john.doe.2@example.com'],
-        ['name' => 'John Doe 3', 'number' => 15417543013, 'email' => 'john.doe.3@example.com'],
-    ],
+$data = array(
+    'contacts' => array(
+        array('name' => 'John Doe 1', 'number' => 15417543011, 'email' => 'john.doe.1@example.com'),
+        array('name' => 'John Doe 2', 'number' => 15417543012, 'email' => 'john.doe.2@example.com'),
+        array('name' => 'John Doe 3', 'number' => 15417543013, 'email' => 'john.doe.3@example.com'),
+    ),
     'ignoreDupes' => false,
     'overwriteDupes' => true
-];
-$data = [ 'contacts' => [ ['name' => 'John Doe 1', 'number' => 15417543011, 'email' => 'john.doe.1@example.com'], ['name' => 'John Doe 2', 'number' => 15417543012, 'email' => 'john.doe.2@example.com'], ['name' => 'John Doe 3', 'number' => 15417543013, 'email' => 'john.doe.3@example.com'], ], 'ignoreDupes' => false, 'overwriteDupes' => true ];
+);
 // Create contacts
 try {
     $result = $client->contact->create($data);

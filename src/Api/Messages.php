@@ -17,8 +17,9 @@ class Messages extends AbstractApi
      */
     public function send(Array $data)
     {
-        $args = (new Message($data))->buildArgs();
-        $result = [];
+        $message = new Message($data);
+        $args = $message->buildArgs();
+        $result = array();
         $data = $this->client->http->call('Send', $args);
         $result['type'] = '';
         $result['send'] = 'error';
@@ -42,8 +43,8 @@ class Messages extends AbstractApi
      */
     public function status($messageID)
     {
-        $args = [];
-        $result = [];
+        $args = array();
+        $result = array();
         if ($messageID && !empty($messageID) && is_integer($messageID)) {
             $args['MessageID'] = $messageID;
         }

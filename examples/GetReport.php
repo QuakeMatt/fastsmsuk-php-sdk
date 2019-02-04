@@ -14,11 +14,11 @@ $client = new Client($config['token']);
 #############Get report##############
 #####################################
 // Init Report params
-$data = [
+$data = array(
     'reportType' => 'Usage',
     'from' => time() - 3600 * 24 * 30,
     'to' => time()
-];
+);
 // Get report
 try {
     $result = $client->report->get($data);

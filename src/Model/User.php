@@ -85,7 +85,7 @@ class User extends BaseModel
      */
     public function buildArgs()
     {
-        $args = [];
+        $args = array();
         if ($this->childUsername && !empty($this->childUsername) && is_string($this->childUsername)) {
             $args['ChildUsername'] = $this->childUsername;
         }

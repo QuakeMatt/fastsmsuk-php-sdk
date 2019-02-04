@@ -23,7 +23,7 @@ class Contact extends BaseModel
      * ]
      * @var array
      */
-    public $contacts = [];
+    public $contacts = array();
     /**
      * Contact Name
      * @var string
@@ -51,8 +51,8 @@ class Contact extends BaseModel
      */
     public function buildArgs()
     {
-        $args = [];
-        $contacts = [];
+        $args = array();
+        $contacts = array();
         if (is_array($this->contacts) && count($this->contacts) > 0) {
             $iterator = 0;
             foreach ($this->contacts as $contact) {

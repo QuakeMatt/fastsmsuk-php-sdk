@@ -43,7 +43,7 @@ class Report extends BaseModel
      * Aviable report types
      * @var array
      */
-    private $types = [
+    private $types = array(
         'ArchivedMessages',
         'ArchivedMessagesWithBodies',
         'ArchivedMessagingSummary',
@@ -54,14 +54,14 @@ class Report extends BaseModel
         'MessagesWithBodies',
         'SendsByDistributionList',
         'Usage',
-    ];
+    );
 
     /**
      * @inheritdoc
      */
     public function buildArgs()
     {
-        $args = [];
+        $args = array();
         if ($this->reportType && in_array($this->reportType, $this->types)) {
             $args['ReportType'] = $this->reportType;
         }
